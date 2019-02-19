@@ -1,0 +1,6 @@
+
+function autenticar() {
+  
+        alert("zxcz")
+    
+}
