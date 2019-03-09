@@ -1,11 +1,13 @@
 
 function autenticar(form) {
-	registered = {
-		user: 'adailsonacj@live.com',
-		pass: 123
-	}
-	var posts = await fetch('https://calm-coast-69939.herokuapp.com/getuser')
-	
+
+	var requestURL = 'https://calm-coast-69939.herokuapp.com/getuser'
+	var request = new XMLHttpRequest()
+	request.open('GET', requestURL);
+	request.responseType = 'json';
+	request.send();
+
+	registered = request.response
 
 	var user = form.user.value
 	var pass = form.pass.value
