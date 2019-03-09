@@ -11,7 +11,10 @@ function autenticar(form) {
 		setTimeout(function () {
 			registered = request.response
 			console.log(registered)
-
+			registered = {
+				user: 'adailsonacj@live.com',
+				senha: 123
+			}
 			var user = form.user.value
 			var pass = form.pass.value
 			if (user == registered.user && pass == registered.pass) {
