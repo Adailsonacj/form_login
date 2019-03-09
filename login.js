@@ -1,18 +1,24 @@
 
 function autenticar(form) {
-
-	var requestURL = 'https://calm-coast-69939.herokuapp.com/getuser'
+	var registered = null
 	var request = new XMLHttpRequest()
+	var requestURL = 'https://calm-coast-69939.herokuapp.com/getuser'
 	request.open('GET', requestURL);
 	request.responseType = 'json';
 	request.send();
 
-	registered = request.response
+	try {
+		setTimeout(function () {
+			registered = request.response
+			console.log(registered)
 
-	var user = form.user.value
-	var pass = form.pass.value
-	if (user == registered.user && pass == registered.pass) {
-		window.open('page.html')
+			var user = form.user.value
+			var pass = form.pass.value
+			if (user == registered.user && pass == registered.pass) {
+				window.open('page.html')
+			}
+		}, 500)
 	}
+	catch (e) { }
 }
 
